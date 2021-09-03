@@ -11,6 +11,10 @@ Blog.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         content: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -25,10 +29,10 @@ Blog.init(
       },
       {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'blog',
       }
 )
 

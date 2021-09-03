@@ -1,0 +1,26 @@
+<div class="post-container">
+
+    {{#if posts}}
+    {{#each posts}}
+    <div class="post-box" data-id="{{ id }}">
+        <div class="title-bar">
+            <h2 class="title">{{ title }}</h2>
+            <h2 class="created-by">Created by {{ user.username }} on {{ format_date created_at }}</h2>
+        </div>
+        <div class="content-box">
+            <p class="content">{{ content }}</p>
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <div class="post-box">
+        <div class="title-bar" id="no-posts-bar">
+            <h2 class="title">You have not posted anything yet!</h2>
+        </div>
+    </div>
+    {{/if}}
+
+
+</div>
+
+<script src="/js/index.js"></script>

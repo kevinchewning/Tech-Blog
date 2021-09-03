@@ -1,0 +1,133 @@
+/* main.handlebars */
+* {
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.header-title {
+    margin-left: 25px;
+}
+
+#nav-menu {
+    margin-left: 25px;
+}
+
+/* login.handlebars styling */
+.login-box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+#submit {
+    margin-top: 15px;
+}
+
+#new-user {
+    margin-top: 15px;
+}
+
+/* homepage.handlebars styling */
+.post-container, .comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.post-box, .comment-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid black;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.title-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0;
+    flex: 0 0 100%;
+    background-color: black;
+    padding: 10px 0;
+    color: aqua;
+    margin: 0 !important;
+}
+
+.title-bar h2, #comment-title {
+    background-color: black;
+    color: aqua;
+}
+
+.title {
+    display: inline-flex;
+    margin-left: 10px;
+}
+
+#no-posts-bar {
+    justify-content: center;
+}
+
+.created-by {
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.content-box {
+    padding: 10px;
+}
+
+.comment-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#new-post-title {
+    flex: 0 0 100%;
+    margin: 0 !important;
+}
+
+#comment-text, .textarea {
+    flex: 0 0 100%;
+    min-height: 100px;
+    margin: 0 !important;
+}
+
+#submit {
+    margin: 0 !important;
+    background: black;
+    color: aqua;
+}
+
+.comment-buttons, .post-buttons {
+    background-color: black;
+}
+
+#comment-submit, .comment-delete, .comment-update, .post-update, .post-delete {
+    margin-right: 10px;
+    background-color: aqua;
+}
+
+@media screen and (max-width: 768px) {
+    .title-bar {
+        justify-content: space-evenly;
+    }
+
+    .comment-buttons {
+        margin-top: 10px;
+    }
+}

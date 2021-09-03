@@ -1,0 +1,58 @@
+<div class="post-container">
+
+    <div id="post" class="post-box" data-id="{{ posts.id }}">
+
+        <div class="title-bar">
+            <h2 class="title">{{ posts.title }}</h2>
+            <h2 class="created-by">Created by {{ posts.user.username }} on {{ format_date posts.created_at }}</h2>
+        </div>
+
+        <div class="content-box">
+            <p class="content">{{ posts.content }}</p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="post-container">
+
+    {{#each comments}}
+    <div class="post-box" data-id="{{ id }}">
+        <div class="title-bar">
+            <h2 class="created-by">Comment from {{ user.username }} on {{ format_date created_at }}</h2>
+            {{#if (isEqual currentUserID user_id)}}
+            <div class="comment-buttons">
+                <button class="pure-button comment-update" data-id="{{ id }}">Update</button>
+                <button class="pure-button comment-delete" data-id="{{ id }}">Delete</button>                
+            </div>
+            {{/if}}
+        </div>
+        <div class="content-box">
+            <p class="content">{{ content }}</p>
+        </div>
+    </div>
+    {{/each}}
+
+</div>
+
+{{!-- TODO: Add functionality and styling to comment container --}}
+{{#if logged_in}}
+<div class="comment-container">
+
+    <div class="comment-box">
+
+        <div class="title-bar">
+            <label for="comment-text" class="title" id="comment-title">Add Comment</label>
+            <button id='comment-submit' type="submit" class="pure-button">Submit</button>
+        </div>
+
+        <textarea id="comment-text" name="comment-text"></textarea>
+
+    </div>
+
+</div>
+{{/if}}
+
+<script src="/js/createComment.js"></script>
+<script src="/js/deleteComment.js"></script>
