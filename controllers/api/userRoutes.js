@@ -40,6 +40,26 @@ router.post('/blog', async (req, res) => {
 })
 
 //Update Blog
+router.put('/blog', async (req, res) => {
+  try {
+    const dbBlogData = await Blog.update(
+      {
+      title: req.body.title,
+      content: req.body.content,
+      },
+      {
+        where: {
+          id: req.body.id
+        }
+      }
+    );
+
+    res.status(200).json(dbBlogData)
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+})
 
 //Delete Blog
 router.delete('/blog', async (req, res) => {
@@ -74,6 +94,25 @@ router.post('/comment', async (req, res) => {
 })
 
 //Update comment
+router.put('/comment', async (req, res) => {
+  try {
+    const dbCommentData = await Comment.update(
+      {
+        content: req.body.content,
+      },
+      {
+        where: {
+          id: req.body.id
+        }
+      }
+    );
+
+    res.status(200).json(dbCommentData)
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+})
 
 //Delete Comment
 router.delete('/comment', async (req, res) => {

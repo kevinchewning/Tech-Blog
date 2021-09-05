@@ -5,7 +5,11 @@
     <div class="post-box" data-id="{{ id }}">
         <div class="title-bar">
             <h2 class="title">{{ title }}</h2>
-            <h2 class="created-by">Created by {{ user.username }} on {{ format_date created_at }}</h2>
+            <h2 class="created-by">Created on {{ format_date created_at }}</h2>
+            <div class="post-buttons">
+                <button class="pure-button post-update" data-id="{{ id }}">Update</button>
+                <button class="pure-button post-delete" data-id="{{ id }}">Delete</button>                
+            </div>
         </div>
         <div class="content-box">
             <p class="content">{{ content }}</p>
@@ -24,3 +28,5 @@
 </div>
 
 <script src="/js/index.js"></script>
+<script src="/js/deletePost.js"></script>
+<script src="/js/updatePost.js"></script>

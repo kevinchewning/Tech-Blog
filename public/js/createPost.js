@@ -2,8 +2,6 @@
 const newPostFormHandler = async (event) => {
   event.preventDefault();
 
-  console.log('click')
-
   const title = document.querySelector('#new-post-title').value.trim()
 
   const content = document.querySelector('#post-content').value.trim()

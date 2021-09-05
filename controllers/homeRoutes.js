@@ -79,7 +79,7 @@ router.get('/viewpost/:id', /* withAuth, */ async (req, res) => {
     res.render('viewpost', {
       posts,
       comments,
-      header: 'Post #: ' + req.params.id,
+      header: 'Post #' + req.params.id,
       user_id: req.session.user_id,
       logged_in: req.session.logged_in
     })
@@ -118,6 +118,56 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+//Render Update Post Screen
+router.get('/updatepost/:id', withAuth, async (req, res) => {
+  try {
+    const dbPostData = await Blog.findByPk(req.params.id, {
+      attributes: ['id', 'title', 'content', 'created_at'],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ],
+    })
+  
+    post = dbPostData.get({plain: true})
+
+    res.render('updatepost', {
+      post,
+      header: 'Update Post',
+      logged_in: req.session.logged_in
+    })
+  } catch (err) {
+    console.error(err)
+  }
+})
+
+//Render Update Comment Screen
+router.get('/updatecomment/:id', withAuth, async (req, res) => {
+  try {
+    const dbCommentData = await Comment.findByPk(req.params.id, {
+      attributes: ['id', 'content', 'blog_id', 'created_at'],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ],
+    })
+  
+    comment = dbCommentData.get({plain: true})
+
+    res.render('updatecomment', {
+      comment,
+      header: 'Update Comment',
+      logged_in: req.session.logged_in
+    })
+  } catch (err) {
+    console.error(err)
+  }
+})
 
 //Render Login Screen
 router.get('/login', (req, res) => {

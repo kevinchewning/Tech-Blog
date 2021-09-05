@@ -3,6 +3,11 @@
     background-color: aqua;
     margin: 0;
     padding: 0;
+    font-family: monospace;
+}
+
+html {
+    font-size: 16px;
 }
 
 main {
@@ -11,11 +16,17 @@ main {
     flex-wrap: wrap;
 }
 
-.header-title {
-    margin-left: 25px;
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 25px;
 }
 
 #nav-menu {
+    font-size: 1.25rem;
     margin-left: 25px;
 }
 
@@ -86,7 +97,9 @@ main {
 }
 
 .content-box {
+    flex: 0 0 95%;
     padding: 10px;
+    white-space: pre-line;
 }
 
 .comment-box{
@@ -107,7 +120,7 @@ main {
     margin: 0 !important;
 }
 
-#submit {
+#submit, #new-user {
     margin: 0 !important;
     background: black;
     color: aqua;
@@ -120,6 +133,11 @@ main {
 #comment-submit, .comment-delete, .comment-update, .post-update, .post-delete {
     margin-right: 10px;
     background-color: aqua;
+}
+
+textarea {
+    outline: none;
+    border: none !important;
 }
 
 @media screen and (max-width: 768px) {

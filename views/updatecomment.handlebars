@@ -1,0 +1,14 @@
+<div class="post-container">
+
+    <form id="post-form" class="pure-form pure-form-stacked post-box">
+
+        <label class="title-bar" for="comment-content">Content:</label>
+        <textarea class="pure-input textarea" id="comment-content" name="comment-content">{{ comment.content }}</textarea>
+
+        <button id="submit" class="pure-button pure-button-primary" type="submit" data-id="{{ comment.id }}" data-blog="{{ comment.blog_id }}">Submit</button>
+
+    </form>
+
+</div>
+
+<script src="/js/updateComment.js"></script>
