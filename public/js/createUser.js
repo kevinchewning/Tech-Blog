@@ -13,7 +13,8 @@ const signupFormHandler = async (event) => {
       })
   
       if (response.ok) {
-        document.location.replace('/');
+        //Add a short timeout so session saves
+        setTimeout(() => {document.location.replace('/');}, 100)        
       } else {
         alert('Failed to sign up.');
       }
