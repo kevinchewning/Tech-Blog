@@ -12,7 +12,7 @@ Comment.init(
             autoIncrement: true,
         },
         content: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(4000),
             allowNull: false,
         },
         user_id: {
