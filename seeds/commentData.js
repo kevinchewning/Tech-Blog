@@ -2,17 +2,17 @@ const { Comment } = require('../models');
 
 const commentdata = [
   {
-    content: 'Ksdf alsjvcba  ljbasd akljdc  ljaafkjbef akuuvbqkev asjbcaqvjbsc ljasbvcljadsv ljasbvjad ljbckakjscv jojbsdv',
+    content: 'Nice! Thanks!',
     user_id: '2',
     blog_id: '1'
   },
   {
-    content: 'Ksdf alsjdv',
+    content: 'true',
     user_id: '1',
     blog_id: '2'
   },
   {
-    content: 'Ksdf alsjvcba  ljbasd akljdc  ljaafkjbef akuuvbqkev asjbcaqvjbsc ljasbvcljadsvv jojbsdv',
+    content: 'Good stuff!',
     user_id: '3',
     blog_id: '1'
   },
