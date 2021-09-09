@@ -1,13 +1,13 @@
-<div class="post-container">
+<div class="comment-container">
 
-    <form id="post-form" class="pure-form pure-form-stacked post-box">
+    <div class="comment-box">
 
-        <label class="title-bar" for="comment-content">Content:</label>
-        <textarea class="pure-input textarea" id="comment-content" name="comment-content">{{ comment.content }}</textarea>
+        <label id="comment-title" class="title-bar" for="comment-content">Comment</label>
+        <textarea id="comment-text" name="comment-content">{{ comment.content }}</textarea>
 
         <button id="submit" class="pure-button pure-button-primary" type="submit" data-id="{{ comment.id }}" data-blog="{{ comment.blog_id }}">Submit</button>
 
-    </form>
+    </div>
 
 </div>
 

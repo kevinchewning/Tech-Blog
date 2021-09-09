@@ -23,15 +23,15 @@
       <div class="header-page">{{#if header}}{{ header}}{{/if}}</div>
     </h1>
     
-    <nav id="nav-menu" class="pure-menu pure-menu-horizontal">
+    <nav id="nav-menu-horizontal" class="pure-menu pure-menu-horizontal nav-menu">
       <ul class="pure-menu-list">
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="/">Home</a>
         </li>
-        {{#if logged_in}}
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="/dashboard">Dashboard</a>
         </li>
+        {{#if logged_in}}
         <li class="pure-menu-item">
           <a class="pure-menu-link" id="new-post" href="/newpost">New Post</a>
         </li>
@@ -53,12 +53,12 @@
   </main>
   
   <footer>
-      
+    <p id="github-footer">Site created by <a href="https://github.com/kevinchewning">Kevin Chewning</a>.</p>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    <script src="/js/verticalNav.js"></script>
   </footer>
-
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
 </body>
 
 </html>

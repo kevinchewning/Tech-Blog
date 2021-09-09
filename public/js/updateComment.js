@@ -13,7 +13,7 @@ let id = $(this).attr('data-id')
 
 let blogID = $(this).attr('data-blog')
 
-const content = document.querySelector('#comment-content').value.trim()
+const content = document.querySelector('#comment-text').value.trim()
 
 if (content) {
     const response = await fetch('/api/users/comment', {

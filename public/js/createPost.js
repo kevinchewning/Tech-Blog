@@ -21,6 +21,4 @@ const newPostFormHandler = async (event) => {
   document.location.replace('/dashboard')
 }
 
-document
-  .querySelector('#post-form')
-  .addEventListener('submit', newPostFormHandler);
+$('#submit').on('click', newPostFormHandler);
